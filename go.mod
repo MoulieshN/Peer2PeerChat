@@ -1,4 +1,4 @@
-module PEER2PEERCHAT
+module peer2peerchat
 
 go 1.21.5
 
