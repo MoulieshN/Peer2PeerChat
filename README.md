@@ -45,3 +45,44 @@ CSS Framework: Bootstrap for styling.
 JavaScript: WebSocket client handling user interactions and real-time updates.
 
 ---
+
+# Application Flow
+
+## Backend Flow
+> HTTP Endpoint (/): 
+
+* Renders the home page using the home.jet template.
+
+> WebSocket Endpoint (/ws): 
+
+* Upgrades HTTP connection to WebSocket.
+
+* Tracks connected users.
+
+* Listens for incoming WebSocket messages.
+
+> Channel Listener:
+
+* Processes WebSocket messages (username updates, broadcasts, and disconnections).
+
+* Updates the online user list.
+
+* Broadcasts messages to all connected clients.
+
+## Frontend Workflow
+
+> Connect to WebSocket: 
+* Establishes a connection to the WebSocket server upon page load.
+
+> User Interaction:
+
+* Sends messages or updates username through WebSocket.
+
+* Displays real-time updates to the chatbox and online users list.
+
+> Graceful Disconnection: Notifies the server when the user leaves.
+
+## Flow diagram
+
+![alt text](image-1.png)
+
